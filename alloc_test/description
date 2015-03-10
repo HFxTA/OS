@@ -1,0 +1,40 @@
+Test 1:
+1000
+ALLOC 10 --> P1
+FREE P1 --> verify all is cleaned
+
+Test 2:
+1000
+ALLOC 10 --> P1
+ALLOC 20 --> P2
+FREE P1
+MAP
+FREE P1
+
+TEST 3:
+1000
+ALLOC 13 --> P1
+INFO
+ALLOC ALL_AVAIL + 1
+ALLOC ALL_AVAIL
+ALLOC 1 --> failed
+FREE P1
+INFO
+
+TEST 4:
+213
+ALLOC 13
+ALLOC 2
+ALLOC 10
+INFO --> allocated -- 25
+MAP
+FREE P1
+ALLOC 
+
+TEST 5:
+100
+ALLOC 1
+ALLOC 2
+INFO
+FREE P1
+INFO (must increase)
